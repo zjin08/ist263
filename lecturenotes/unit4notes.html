@@ -39,7 +39,7 @@
             <p>This form is going to be for takeout orders.</p>
             <label for="fullname">Full Name:</label>
             <!--label for="xx"里的xx和id="xx"里的xx需保持一致-->
-            <!--？name是发email时候显示的吗 ？-->
+            <!--name是发email时候显示的名称-->
             <input type="text" id="fullname" name="full_name">
             <br>
 
@@ -48,10 +48,10 @@
             <br>
 
             <!--name for input type="radio" 需要保持一致,这样才只能选一个；不一样的话，就是多选了-->
-            <!--?name-email? value是什么？-->
+            <!--value是email里显示的选项名称-->
             <input type="radio" id="pickup" name="pickupdelivery" value="pickup">
             <label for="pickup">pick up</label>
-            <input type="radio" id="delivery" name="pickupdelivery">
+            <input type="radio" id="delivery" name="pickupdelivery" value="delivery">
             <label for="delivery">delivery</label>
             <br>
 
