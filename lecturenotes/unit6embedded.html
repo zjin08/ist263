@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Day 1</title>
+    <style>
+        /* p is our selector, color is our property, and darkorchid is our value */
+        p, h1 {
+            color: darkorchid;
+            /* this is font size by % - 3 times default size
+            font-size: 300%; */
+            font-size: 1.5em; /* 50% bigger than default */
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bolder;
+        }
+        /* "p a" is looking for "a" in a "p" */
+        p a {color: cornflowerblue;}
+        /* # is looking for id */
+        #firstlink {color: burlywood;}
+        /* . is looking for class attribute */
+        .redtext {color: red;}
+    </style>
+</head>
+<body>
+    <h1> CSS How Do You Do It?</h1>
+    <h2 class="redtext">Selectors</h2>
+    <a href="http://www.amazon.com" id="firstlink">Amazon</a>
+    <p>
+        <a href="http://www.google.com">Google</a>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi et ut voluptas ipsa quod aliquid excepturi, quibusdam animi commodi itaque reiciendis molestias aspernatur quis, iste error cumque. In, architecto corrupti.
+    </p>
+    <p class="redtext">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto consectetur ipsa vel porro cum quo sit omnis, accusantium totam hic eligendi id? Suscipit explicabo voluptas temporibus asperiores veniam nemo?
+    </p>
+</body>
+</html>

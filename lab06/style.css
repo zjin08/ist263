@@ -1,0 +1,6 @@
+body {font-family: Arial, Helvetica, sans-serif;}
+h1, h2, caption {color: indianred;}
+table, th, td {border: 1px solid black}
+.evenrow {background-color: bisque;}
+h1 {font-size: 2em;}
+h2 {font-size: 1em;}
