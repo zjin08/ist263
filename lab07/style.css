@@ -24,12 +24,14 @@ nav a{
     color: #ffffff;
 }
 nav a:hover{
-    background-color: bisque;
+    background-color: #ffe4c4;
 }
 table, th, td {
-    border: 1px solid black
+    border: 1px solid #000000
 }
 .evenrow {
     background-color: #ffc4d48a;
 }
-
+#dark {
+    color: #440909;
+}
