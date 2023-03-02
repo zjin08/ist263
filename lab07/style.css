@@ -8,7 +8,7 @@ a {
     color: #5b99d8;
 }
 a:hover {
-    color: #9150aa; 
+    color: #86167ecb; 
 } 
 h1, h2{
     color: #c85c67;
@@ -24,7 +24,8 @@ nav a{
     color: #ffffff;
 }
 nav a:hover{
-    background-color: #ffe4c4;
+    background-color: #fffdf6;
+    color: #b6163e93;
 }
 table, th, td {
     border: 1px solid #000000
