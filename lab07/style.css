@@ -1,5 +1,5 @@
 body{
-    background-color: #fffef28c; 
+    background-color: #fffaeb8c; 
 }
 p{
     color: #440909;
@@ -14,7 +14,7 @@ h1, h2{
     color: #c85c67;
 }
 nav {
-    background-color: #b51a4191;
+    background-color: #b6163e93;
     padding: 10px 10px 10px 10px;
     margin-bottom: 30px;
     font-size: 1.1em;
@@ -32,3 +32,4 @@ table, th, td {
 .evenrow {
     background-color: #ffc4d48a;
 }
+
