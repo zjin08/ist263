@@ -1,0 +1,32 @@
+h1, h2{
+    color: #c85c67;
+}
+table, th, td {
+    border: 1px solid black
+}
+.evenrow {
+    background-color: #ffc4d48a;
+}
+body{
+    background-color: #fffef28c;
+    color: #440909;
+}
+a {
+    color: #5b99d8;
+}
+a:hover {
+    color: #9150aa; 
+} 
+nav {
+    background-color: #e1315d91;
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    color: #ffffff;
+}
+nav a{
+    color: #ffffff;
+}
+nav a:hover{
+    background-color: bisque;
+}
