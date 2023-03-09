@@ -36,19 +36,3 @@ table, th, td {
 #dark {
     color: #440909;
 }
-.motto {
-    float: right;
-}
-.contact, .row2{
-    display: flex;
-    background-color: antiquewhite;
-    margin: 20px;
-    border-radius: 1em;
-}
-.address, .email, .form, .map{
-    margin: 30px;
-}
-.email {
-    padding-top: 77px;
-}
-
