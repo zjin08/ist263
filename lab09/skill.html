@@ -4,6 +4,52 @@
         <meta charset="utf-8">
         <title>Skills</title>
         <link rel="stylesheet" href="style.css">
+        <style>
+            .main {
+                display: flex;
+            }
+            h1 {
+                display: flex;
+                justify-content: center;
+            }
+            img {
+                width: 50px;
+            }
+            .iconskill {
+                display: flex;
+                flex: 3;
+                justify-content: space-around;
+                margin: 50px 5px 50px 5px;
+                padding: 10px;
+            }
+            .icon {
+                padding: 10px;
+            }
+            aside {
+                background-color: #b6163e93;    
+                border-radius: 10px;
+                padding: 5px 20px;
+            }
+            aside h2 {
+                color: #ffffff;
+            }
+            .otherskill {
+                display: flex;
+                flex: 1;
+            }       
+            .description {
+                display: flex;
+            }
+            .p1 {
+                display: flex;
+                flex: 3;
+                margin: 20px;
+            }
+            .p2 {
+                display: flex;
+                flex: 1;
+            }
+        </style>
     </head>
     <body>
         <nav>
@@ -11,7 +57,51 @@
             <a href="skill.html">Skill</a> |
             <a href="jin-contact.html">Contact</a>
         </nav>
-        <table>
+        
+        <h1>Techinical Skills</h1>
+
+       <div class="description">
+            <p class="p1">As a digital advertising major, I excel in managing and analyzing data while also possessing a keen eye for design, including web design and coding proficiency.</p>
+            <p class="p2"></p>
+       </div>
+         <br>
+
+        <div class="main">
+            <div class="iconskill">
+                <div class="icon">
+                    <img src="../images/laptop-code-solid.svg" alt="code">
+                    <p>HTML</p>
+                </div>
+                <div class="icon">
+                    <img src="../images/code-solid.svg" alt="css">
+                    <p>CSS</p>
+                </div>
+                <div class="icon">
+                    <img src="../images/palette-solid.svg" alt="Photoshop">
+                    <p>Adobe Photoshop</p>
+                </div>
+                <div class="icon">
+                    <img src="../images/pen-solid.svg" alt="Illustrator">
+                    <p>Adobe Illustrator</p>
+                </div>
+                <div class="icon">
+                    <img src="../images/clone-solid.svg" alt="Excel">
+                    <p>Microsoft Excel</p>
+                </div>
+            </div>
+            <div class="otherskill"> 
+                <aside>
+                    <h2>Other Skills</h2>
+                    <p>Windows 10</p>
+                    <p>Adobe Indesign</p>
+                    <p>Microsoft Word</p>
+                    <p>Microsoft Powerpoint</p>
+                    <p>Quantitative Analysis</p>
+                </aside>
+            </div> 
+        </div>
+
+       <!-- <table>
             <caption>Techinical Skills</caption>
             <tr class="evenrow">
                 <th>Category</th>
@@ -68,8 +158,8 @@
                 <td>Quantitative Analysis</td>
                 <td>Proficient</td>
             </tr>
-        </table>
-    </body>
+        </table> -->
 
+    </body>
 
 </html>
