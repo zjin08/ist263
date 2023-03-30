@@ -36,11 +36,15 @@ table, th, td {
 #dark {
     color: #440909;
 }
-@media only screen and (min-width: 800px) {
+@media only screen and (max-width: 800px) {
     nav a {
         width: 100%;
         display: block;
     }
-    span {display: none;}
-    
+    span {
+        display: none;
+    }
+    .interest {
+        display: 50%;
+    }
 }
