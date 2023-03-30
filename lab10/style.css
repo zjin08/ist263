@@ -47,4 +47,7 @@ table, th, td {
     #interest {
         width: 70%;
     }
+    .map {
+        width: 60%;
+    }
 }
