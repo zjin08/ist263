@@ -48,6 +48,7 @@ table, th, td {
         width: 70%;
     }
     .map {
+        margin: 0px;
         width: 60%;
     }
 }
