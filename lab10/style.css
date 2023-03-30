@@ -44,7 +44,7 @@ table, th, td {
     span {
         display: none;
     }
-    .interest {
+    #interest {
         display: 50%;
     }
 }
