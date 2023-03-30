@@ -45,6 +45,6 @@ table, th, td {
         display: none;
     }
     #interest {
-        display: 50%;
+        width: 70%;
     }
 }
