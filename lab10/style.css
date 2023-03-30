@@ -37,5 +37,9 @@ table, th, td {
     color: #440909;
 }
 @media only screen and (min-width: 800px) {
-    nav a {width: 100%;}
+    nav a {
+        width: 100%;
+        display: block;
+    }
+    
 }
