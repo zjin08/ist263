@@ -41,5 +41,6 @@ table, th, td {
         width: 100%;
         display: block;
     }
+    span {display: none;}
     
 }
