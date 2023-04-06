@@ -1,0 +1,64 @@
+body{
+    background-color: #fffaeb8c; 
+}
+p{
+    color: #440909;
+}
+a {
+    color: #5b99d8;
+}
+a:hover {
+    color: #86167ecb; 
+} 
+h1, h2{
+    color: #c85c67;
+}
+nav {
+    background-color: #b6163e93;
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    color: #ffffff;
+}
+nav a{
+    color: #ffffff;
+}
+nav a:hover{
+    background-color: #fffdf6;
+    color: #b6163e93;
+}
+table, th, td {
+    border: 1px solid #000000
+}
+.evenrow {
+    background-color: #ffc4d48a;
+}
+#dark {
+    color: #440909;
+}
+@media only screen and (max-width: 800px) {
+    nav a {
+        width: 100%;
+        display: block;
+    }
+    span {
+        display: none;
+    }
+    #interest {
+        width: 70%;
+    }
+    .map {
+        width: 60%;
+    }
+}
+.skip {
+    background-color: #c85c67;
+    padding: 5px;
+    text-decoration: none;
+    position: absolute; /* position element relative to top left of viewport */
+    top: 10px;
+    left: -999px; /* push it off the left side */
+}
+.skip:focus {
+    left: 10px; /* bring it back when they tab to it */
+}
