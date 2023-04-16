@@ -16,18 +16,25 @@ nav {
     margin-bottom: 20px;
     font-size: 1.2em;
     color: #ffffff;
+}
+.nav {
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
+}
+.navsplit1, .navsplit2 {
+    display: flex;
 }
 nav div {
-    padding: 0 10px;
+    padding: 0 5px;
 }
 nav a {
     color: #ffffff;
     text-decoration: none;
 }
-.no1, .no2, .no3 {
+.topics {
     display: flex;
+}
+.no1, .no2, .no3 {
     flex-wrap: wrap;
     flex: 1;
     margin: 20px;

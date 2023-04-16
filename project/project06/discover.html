@@ -16,10 +16,6 @@
             font-size: 1.1em;
             justify-content: center;
         }
-        .topics {
-            display:flex;
-            flex-wrap: wrap;
-        }
         div img {
             max-width: 100%;
         }
@@ -31,14 +27,25 @@
         }
         @media only screen and (max-width: 800px) {
             nav {margin-bottom: 5px;}
+            .topics {display: block;}
+            .nav {justify-content: flex-end;}
+            .navsplit1 {display: none;}
         }
     </style>
 </head>
 <body>
     <nav>
-        <div><a href="discover.html">Discover</a></div>
-        <div><a href="explore.html">Explore</a></div>
-        <div><a href="unleash.html">Unleash</a></div>
+        <div class="nav">
+            <div class="navsplit1">
+                Embracing Your Unique Self
+            </div>
+            <div class="navsplit2">
+                <div><a href="discover.html">Discover</a></div>
+                <div><a href="explore.html">Explore</a></div>
+                <div><a href="unleash.html">Unleash</a></div>
+            </div>
+        </div>
+      
     </nav>
 
     <header>
@@ -46,7 +53,6 @@
     </header>
 
     <main>
-        
         <div class="intro">
             <p>Are you feeling the pressure to conform to social norms and expectations? Embracing Your Unique Self can help you celebrate your authenticity and find your true purpose in life. Explore our website for resources, tips, and inspiration to break free from societal pressures and embrace your uniqueness. Join us in the movement towards self-discovery and self-love. Embrace Your Unique Self today.</p>
         </div>
