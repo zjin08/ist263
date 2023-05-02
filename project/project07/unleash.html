@@ -90,7 +90,7 @@
                 </div>
             </div>
 
-            <div class="comments">
+            <!-- <div class="comments">
                 <h2>Comments</h2>
                     <div id="comments"></div>
                         <form id="comment-form">
@@ -124,8 +124,73 @@
                             commentInput.value = "";
                         });
                     </script>
+                -->
+                
+               
+	        <div id="comments">
+		    <!-- Existing comments will be displayed here by JavaScript -->
+            <h2>Comments</h2> 
+                <form id="comment-form">
+                    <label for="comment">Comment:</label><br>
+                    <textarea id="comment" name="comment"></textarea><br>
+                    <button type="submit">Submit</button>
+                </form>
+
+                <script>
+                    const commentsDiv = document.getElementById("comments");
+                    const form = document.getElementById("comment-form");
+
+                    // Retrieve existing comments from database
+                    fetch('/get_comments')
+                        .then(response => response.json())
+                        .then(comments => {
+                            comments.forEach(comment => {
+                                const commentDiv = createCommentDiv(comment);
+                                commentsDiv.appendChild(commentDiv);
+                            });
+                        });
+
+                    form.addEventListener("submit", (event) => {
+                        event.preventDefault();
+
+                        const commentInput = document.getElementById("comment");
+
+                        // Save new comment to database
+                        fetch('/save_comment', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({comment: commentInput.value})
+                        })
+                        .then(response => response.json())
+                        .then(comment => {
+                            const commentDiv = createCommentDiv(comment);
+                            commentsDiv.appendChild(commentDiv);
+                            commentInput.value = "";
+                        })
+                        .catch(error => {
+                            console.error('Error saving comment:', error);
+                        });
+                    });
+
+                    function createCommentDiv(comment) {
+                        const commentDiv = document.createElement("div");
+                        commentDiv.classList.add("comment");
+
+                        const timestampSpan = document.createElement("span");
+                        timestampSpan.classList.add("timestamp");
+                        timestampSpan.textContent = new Date(comment.timestamp).toLocaleString();
+                        commentDiv.appendChild(timestampSpan);
+
+                        const commentP = document.createElement("p");
+                        commentP.textContent = comment.comment;
+                        commentDiv.appendChild(commentP);
+
+                        return commentDiv;
+                    }
+                </script>
             </div>
-        </div>
 
     </main>
 
