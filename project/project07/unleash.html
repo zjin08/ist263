@@ -52,7 +52,10 @@
             nav {margin-bottom: 5px;}
             .nav {justify-content: flex-start;}
             .navsplit1 {display: none;}
-            .labels {max-width: 100%;}
+            .bigvideo{display: none;}
+        }
+    @media only screen and (min-width: 799px) {
+            .smallvideo {display: none;}
         }
 </style>
 
@@ -83,14 +86,17 @@
                     
                 By sharing this video, we hope to inspire others to challenge harmful societal norms and promote positive messages about self-acceptance and empowerment.<br><br>
                 </p>
-                <video controls>
+                <video controls class="bigvideo">
+                    <source src="../images/labels_480p.mp4" type="video/mp4">
+                </video>
+                <video controls width="500" class="smallvideo">
                     <source src="../images/labels_480p.mp4" type="video/mp4">
                 </video>
         
                 <div class="story">
                     <form action="https://formspree.io/f/mqkopqnl" method="post">
                         <label for="name">Name:</label>
-                        <input type="text" id="name" name="Name">
+                        <input type="text" id="name" name="Name"><br>
             
                         <label for="email">Email:</label>
                         <input type="text" id="email" name="Email">
