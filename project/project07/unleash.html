@@ -18,6 +18,25 @@
     nav{
         font-weight: 600;
     }
+    .labels {
+        display: flex;
+    }
+    .video {
+        flex: 3;
+        margin: 0px 50px 0px 10px;
+    }
+    .comments {
+        flex: 1;
+    }
+    video {
+        max-width: 100%;
+    }
+    .story {
+        background-color: #ebebeb87;
+        border-radius: 10px;
+        margin: 10px 10px 0px 0px;
+        padding: 20px;
+    }
     @media only screen and (max-width: 800px) {
             nav {margin-bottom: 5px;}
             .topics {display: block;}
@@ -25,6 +44,32 @@
             .navsplit1 {display: none;}
         }
 </style>
+<script>
+    const commentsDiv = document.getElementById("comments");
+    const form = document.getElementById("comment-form");
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const commentInput = document.getElementById("comment");
+
+        const commentDiv = document.createElement("div");
+        commentDiv.classList.add("comment");
+
+        const timestampSpan = document.createElement("span");
+        timestampSpan.classList.add("timestamp");
+        timestampSpan.textContent = new Date().toLocaleString();
+        commentDiv.appendChild(timestampSpan);
+
+        const commentP = document.createElement("p");
+        commentP.textContent = commentInput.value;
+        commentDiv.appendChild(commentP);
+
+        commentsDiv.appendChild(commentDiv);
+
+        commentInput.value = "";
+    });
+</script>
 <body>
     <div>
         <a href="#main" class="skip" tabindex="1">Skip to Content</a> <!-- bookmark links jump you around the page -->
@@ -43,42 +88,43 @@
     </nav>
 
     <main>
-        <h1>Don't Define by Labels</h1>
-        <p>introduction about the video "Don't Define by Labels". Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem architecto doloribus fugiat, vero ipsa dignissimos consequuntur voluptate iusto quod voluptas debitis laboriosam! Expedita numquam eum nemo reiciendis fugit voluptatibus eligendi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id molestiae debitis fugit dignissimos, incidunt placeat perspiciatis possimus deleniti numquam animi. Nesciunt odit non tenetur molestiae est ad vel inventore magnam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, ut delectus? Consectetur, dolorum harum? Labore odio quam repudiandae quis. Tempora reprehenderit ex quia repellendus, harum atque! Omnis vero dolor laudantium.</p>
-        <video width="820" autoplay>
-            <source src="../images/labels_480p.mp4" type="video/mp4">
-        </video>
-
-        <form action="https://formspree.io/f/mqkopqnl" method="post">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="Name">
-
-            <label for="email">Email:</label>
-            <input type="text" id="email" name="Email">
-            <br>
-
-            <label for="share">Share your Story:</label><br>
-            <textarea id="share" name="Share your story" rows="10" cols="80"></textarea>
-            <br>
-
-            <input type="submit" value="submit">
-        </form>
-
-            <h2>Comments</h2>
-            <p>comment 1: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi aut sunt dolore, praesentium pariatur quasi odio consequatur provident. Soluta nulla nisi nostrum vitae porro inventore iure laborum ullam accusamus. Porro?</p>
-            <p>comment 2: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi aut sunt dolore, praesentium pariatur quasi odio consequatur provident. Soluta nulla nisi nostrum vitae porro inventore iure laborum ullam accusamus. Porro?</p>
-            <p>comment 3: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi aut sunt dolore, praesentium pariatur quasi odio consequatur provident. Soluta nulla nisi nostrum vitae porro inventore iure laborum ullam accusamus. Porro?</p>
-            <p>comment 4: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi aut sunt dolore, praesentium pariatur quasi odio consequatur provident. Soluta nulla nisi nostrum vitae porro inventore iure laborum ullam accusamus. Porro?</p>
-            <p>comment 5: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi aut sunt dolore, praesentium pariatur quasi odio consequatur provident. Soluta nulla nisi nostrum vitae porro inventore iure laborum ullam accusamus. Porro?</p>
-            <p>comment 6: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi aut sunt dolore, praesentium pariatur quasi odio consequatur provident. Soluta nulla nisi nostrum vitae porro inventore iure laborum ullam accusamus. Porro?</p>
+        <div class="labels">
+            <div class="video">
+                <h1>Don't Define by Labels</h1>
+                <p>introduction about the video "Don't Define by Labels". Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem architecto doloribus fugiat, vero ipsa dignissimos consequuntur voluptate iusto quod voluptas debitis laboriosam! Expedita numquam eum nemo reiciendis fugit voluptatibus eligendi! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id molestiae debitis fugit dignissimos, incidunt placeat perspiciatis possimus deleniti numquam animi. Nesciunt odit non tenetur molestiae est ad vel inventore magnam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, ut delectus? Consectetur, dolorum harum? Labore odio quam repudiandae quis. Tempora reprehenderit ex quia repellendus, harum atque! Omnis vero dolor laudantium.</p>
+                <video autoplay>
+                    <source src="../images/labels_480p.mp4" type="video/mp4">
+                </video>
         
-        <form action="https://formspree.io/f/mqkopqnl" method="post">
-            <label for="comments">Post your comments</label><br>
-            <textarea id="comments" name="Comments" rows="5" cols="50"></textarea>
-            <br>
+                <div class="story">
+                    <form action="https://formspree.io/f/mqkopqnl" method="post">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="Name">
+            
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" name="Email">
+                        <br>
+            
+                        <label for="share">Share your Story:</label><br>
+                        <textarea id="share" name="Share your story" rows="10" cols="80"></textarea>
+                        <br>
+            
+                        <input type="submit" value="submit">
+                    </form>
+                </div>
+            </div>
 
-            <input type="submit" value="submit">
-        </form>
+            <div class="comments">
+                <h2>Comments</h2>
+                    <div id="comments"></div>
+                    <form id="comment-form">
+                        <label for="comment">Comment:</label>
+                        <textarea id="comment" name="comment"></textarea><br><br>
+                        <button type="submit">Submit</button>
+                    </form>   
+            </div>
+        </div>
+
     </main>
 
     <footer>
