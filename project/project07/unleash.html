@@ -79,7 +79,7 @@
             
                         <label for="email">Email:</label>
                         <input type="text" id="email" name="Email">
-                        <br>
+                        <br><br>
             
                         <label for="share">Share your Story:</label><br>
                         <textarea id="share" name="Share your story" rows="10" cols="80"></textarea>
@@ -90,7 +90,7 @@
                 </div>
             </div>
 
-            <!-- <div class="comments">
+            <div class="comments">
                 <h2>Comments</h2>
                     <div id="comments"></div>
                         <form id="comment-form">
@@ -99,98 +99,67 @@
                             <button type="submit">Submit</button>
                         </form>   
                     <script>
-                        const commentsDiv = document.getElementById("comments");
-                        const form = document.getElementById("comment-form");
-                    
-                        form.addEventListener("submit", (event) => {
-                            event.preventDefault();
-                    
-                            const commentInput = document.getElementById("comment");
-                    
-                            const commentDiv = document.createElement("div");
-                            commentDiv.classList.add("comment");
-                    
-                            const timestampSpan = document.createElement("span");
-                            timestampSpan.classList.add("timestamp");
-                            timestampSpan.textContent = new Date().toLocaleString();
-                            commentDiv.appendChild(timestampSpan);
-                    
-                            const commentP = document.createElement("p");
-                            commentP.textContent = commentInput.value;
-                            commentDiv.appendChild(commentP);
-                    
-                            commentsDiv.appendChild(commentDiv);
-                    
-                            commentInput.value = "";
-                        });
-                    </script>
-                -->
-                
-               
-	        <div id="comments">
-		    <!-- Existing comments will be displayed here by JavaScript -->
-            <h2>Comments</h2> 
-                <form id="comment-form">
-                    <label for="comment">Comment:</label><br>
-                    <textarea id="comment" name="comment"></textarea><br>
-                    <button type="submit">Submit</button>
-                </form>
+                        // Get a reference to the comments collection on GitHub
+                        var commentsRef = "https://api.github.com/repos/zjin08/ist263/project/project07/issues/comments";
 
-                <script>
-                    const commentsDiv = document.getElementById("comments");
-                    const form = document.getElementById("comment-form");
+                        // Listen for form submit
+                        document.getElementById("comment-form").addEventListener("submit", submitForm);
 
-                    // Retrieve existing comments from database
-                    fetch('/get_comments')
-                        .then(response => response.json())
-                        .then(comments => {
-                            comments.forEach(comment => {
-                                const commentDiv = createCommentDiv(comment);
-                                commentsDiv.appendChild(commentDiv);
-                            });
-                        });
-
-                    form.addEventListener("submit", (event) => {
+                        // Submit form
+                        function submitForm(event) {
                         event.preventDefault();
+                        // Get input values
+                        var name = getInputValue("name-input");
+                        var comment = getInputValue("comment-input");
+                        // Save comment
+                        saveComment(name, comment);
+                        // Clear form
+                        document.getElementById("comment-form").reset();
+                        }
 
-                        const commentInput = document.getElementById("comment");
+                        // Function to get form input values
+                        function getInputValue(id) {
+                        return document.getElementById(id).value;
+                        }
 
-                        // Save new comment to database
-                        fetch('/save_comment', {
-                            method: 'POST',
+                        // Function to save comment to GitHub
+                        function saveComment(name, comment) {
+                        var data = JSON.stringify({ body: comment });
+                        fetch(commentsRef, {
+                            method: "POST",
                             headers: {
-                                'Content-Type': 'application/json'
+                            "Content-Type": "application/json",
+                            "Authorization": "token your-github-token"
                             },
-                            body: JSON.stringify({comment: commentInput.value})
+                            body: data
                         })
                         .then(response => response.json())
-                        .then(comment => {
-                            const commentDiv = createCommentDiv(comment);
-                            commentsDiv.appendChild(commentDiv);
-                            commentInput.value = "";
+                        .then(data => console.log(data))
+                        .catch(error => console.error(error));
+                        }
+
+                        // Retrieve comments from GitHub and update comments list
+                        fetch(commentsRef, {
+                        method: "GET",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Authorization": "token your-github-token"
+                        }
                         })
-                        .catch(error => {
-                            console.error('Error saving comment:', error);
+                        .then(response => response.json())
+                        .then(data => {
+                        var commentsList = document.getElementById("comments-list");
+                        data.forEach(comment => {
+                            var commentElement = document.createElement("div");
+                            commentElement.innerHTML = "<strong>" + comment.user.login + ":</strong> " + comment.body;
+                            commentsList.appendChild(commentElement);
                         });
-                    });
+                        })
+                        .catch(error => console.error(error));
 
-                    function createCommentDiv(comment) {
-                        const commentDiv = document.createElement("div");
-                        commentDiv.classList.add("comment");
-
-                        const timestampSpan = document.createElement("span");
-                        timestampSpan.classList.add("timestamp");
-                        timestampSpan.textContent = new Date(comment.timestamp).toLocaleString();
-                        commentDiv.appendChild(timestampSpan);
-
-                        const commentP = document.createElement("p");
-                        commentP.textContent = comment.comment;
-                        commentDiv.appendChild(commentP);
-
-                        return commentDiv;
-                    }
-                </script>
+                    </script>
             </div>
+        </div>
 
     </main>
 
