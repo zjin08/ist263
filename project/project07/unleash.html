@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embracing Your Unique Self</title>
+    <title>Embracing Your Unique Self: Unleash</title>
     <link rel="stylesheet" href="../project06/fat-style.css">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,7 +40,6 @@
     }
     @media only screen and (max-width: 800px) {
             nav {margin-bottom: 5px;}
-            .topics {display: block;}
             .nav {justify-content: flex-start;}
             .navsplit1 {display: none;}
         }
@@ -90,74 +89,14 @@
                 </div>
             </div>
 
-            <!-- <div class="comments"> -->
+            <div class="comments">
                 <h2>Comments</h2>
                     <div id="comments"></div>
-                        <form id="comment-form">
-                            <label for="comment">Comment:</label> <br>
-                            <textarea id="comment" name="comment" rows="10" cols="30"></textarea><br><br>
-                            <button type="submit">Submit</button>
-                        </form>   
-                    <script>
-                        // Get a reference to the comments collection on GitHub
-                        var commentsRef = "https://api.github.com/repos/zjin08/ist263/project/project07/issues/comments";
-
-                        // Listen for form submit
-                        document.getElementById("comment-form").addEventListener("submit", submitForm);
-
-                        // Submit form
-                        function submitForm(event) {
-                        event.preventDefault();
-                        // Get input values
-                        var name = getInputValue("name-input");
-                        var comment = getInputValue("comment-input");
-                        // Save comment
-                        saveComment(name, comment);
-                        // Clear form
-                        document.getElementById("comment-form").reset();
-                        }
-
-                        // Function to get form input values
-                        function getInputValue(id) {
-                        return document.getElementById(id).value;
-                        }
-
-                        // Function to save comment to GitHub
-                        function saveComment(name, comment) {
-                        var data = JSON.stringify({ body: comment });
-                        fetch(commentsRef, {
-                            method: "POST",
-                            headers: {
-                            "Content-Type": "application/json",
-                            "Authorization": "token your-github-token"
-                            },
-                            body: data
-                        })
-                        .then(response => response.json())
-                        .then(data => console.log(data))
-                        .catch(error => console.error(error));
-                        }
-
-                        // Retrieve comments from GitHub and update comments list
-                        fetch(commentsRef, {
-                        method: "GET",
-                        headers: {
-                            "Content-Type": "application/json",
-                            "Authorization": "token your-github-token"
-                        }
-                        })
-                        .then(response => response.json())
-                        .then(data => {
-                        var commentsList = document.getElementById("comments-list");
-                        data.forEach(comment => {
-                            var commentElement = document.createElement("div");
-                            commentElement.innerHTML = "<strong>" + comment.user.login + ":</strong> " + comment.body;
-                            commentsList.appendChild(commentElement);
-                        });
-                        })
-                        .catch(error => console.error(error));
-
-                    </script>
+                    <form action="https://formspree.io/f/mqkopqnl" method="post">
+                        <label for="comment">Comment:</label> <br>
+                        <textarea id="comment" name="comment" rows="10" cols="30"></textarea><br>
+                        <button type="submit">Submit</button>
+                    </form>
             </div>
         </div>
 
