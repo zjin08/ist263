@@ -20,6 +20,7 @@
     }
     .labels {
         display: flex;
+        flex-wrap: wrap;
     }
     .video {
         flex: 3;
@@ -116,12 +117,13 @@
 
             <div class="comments">
                 <h2>Comments</h2>
-                    <div id="comments"></div>
-                    <form id="comment-form">
-                        <label for="comment">Comment:</label>
-                        <textarea id="comment" name="comment"></textarea><br><br>
-                        <button type="submit">Submit</button>
-                    </form>   
+                    <div id="comments">
+                        <form id="comment-form">
+                            <label for="comment">Comment:</label> <br>
+                            <textarea id="comment" name="comment" rows="10" cols="30"></textarea><br><br>
+                            <button type="submit">Submit</button>
+                        </form>   
+                    </div>
             </div>
         </div>
 
