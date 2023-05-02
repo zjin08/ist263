@@ -53,9 +53,11 @@
             .nav {justify-content: flex-start;}
             .navsplit1 {display: none;}
             .bigvideo{display: none;}
+            .bigform {display: none;}
         }
     @media only screen and (min-width: 799px) {
             .smallvideo {display: none;}
+            .smallform {display: none;}
         }
 </style>
 
@@ -94,7 +96,7 @@
                 </video>
         
                 <div class="story">
-                    <form action="https://formspree.io/f/mqkopqnl" method="post">
+                    <form action="https://formspree.io/f/mqkopqnl" method="post" class="bigform">
                         <label for="name">Name:</label>
                         <input type="text" id="name" name="Name"><br>
             
@@ -104,6 +106,21 @@
             
                         <label for="share">Share your Story:</label><br>
                         <textarea id="share" name="Share your story" rows="10" cols="80"></textarea>
+                        <br>
+            
+                        <input type="submit" value="submit">
+                    </form>
+
+                    <form action="https://formspree.io/f/mqkopqnl" method="post" class="smallform">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="Name"><br>
+            
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" name="Email">
+                        <br><br>
+            
+                        <label for="share">Share your Story:</label><br>
+                        <textarea id="share" name="Share your story" rows="10" cols="50"></textarea>
                         <br>
             
                         <input type="submit" value="submit">
