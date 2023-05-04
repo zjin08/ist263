@@ -23,10 +23,24 @@
             background-size: 70%;
             background-repeat: no-repeat;
             background-position: bottom;
-            padding: 60px 60px 80px 60px;
+            padding: 30px 60px 80px 60px;
         }
         #main {
             font-size: 1.6em;
+        }
+        .introsmall {
+            margin: 20px 20px 40px 20px;
+            font-size: 1.1em;
+            justify-content: center;
+            text-align: center;
+            background-image: url(../images/introhug.png);
+            background-size: 70%;
+            background-repeat: no-repeat;
+            background-position: bottom;
+            padding: 30px 60px 80px 60px;
+        }
+        #mainsmall {
+            font-size: 1.2em;
         }
         .intro p {
             font-size: 1.3em;
@@ -51,7 +65,12 @@
             .topics {display: block;}
             .nav {justify-content: flex-start;}
             .title {display: none;}
+            .intro {display: none;}
         }
+        @media only screen and (min-width: 799px) {
+            .introsmall {display: none;}
+        }
+
     </style>
 </head>
 <body>
@@ -80,6 +99,12 @@
         <section>
             <div class="intro">
                 <p id="main">Are you feeling the pressure to conform to social norms and expectations?</p>
+                <p>Embracing Your Unique Self can help you celebrate your authenticity and find your true purpose in life.<br> Explore our website for resources, tips, and inspiration to break free from societal pressures and embrace your uniqueness.<br> Join us in the movement towards self-discovery and self-love. <br>Embrace Your Unique Self today :&#41;
+                </p> 
+            </div>
+
+            <div class="introsmall">
+                <p id="mainsmall">Are you feeling the pressure to conform to social norms and expectations?</p>
                 <p>Embracing Your Unique Self can help you celebrate your authenticity and find your true purpose in life.<br> Explore our website for resources, tips, and inspiration to break free from societal pressures and embrace your uniqueness.<br> Join us in the movement towards self-discovery and self-love. <br>Embrace Your Unique Self today :&#41;
                 </p> 
             </div>
