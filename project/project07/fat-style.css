@@ -66,3 +66,10 @@ nav a {
 .skip:focus {
     left: 10px; /* bring it back when they tab to it */
 }
+.foot {
+    display: flex;
+    justify-content: space-between;
+}
+.name, .year {
+    display: flex;
+}
