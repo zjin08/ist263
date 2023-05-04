@@ -1,3 +1,6 @@
+body{
+    font-family: 'Ysabeau', sans-serif;
+}
 p{
     color: #440909;
 }
@@ -16,6 +19,7 @@ nav {
     margin-bottom: 20px;
     font-size: 1.2em;
     color: #ffffff;
+    font-weight: 600;
 }
 .nav {
     display: flex;
@@ -23,6 +27,13 @@ nav {
 }
 .navsplit1, .navsplit2 {
     display: flex;
+}
+.navicon {
+    width: 20px;
+    margin: 0px 10px 0px 0px;
+}
+.navsplit2 div{
+    padding: 0px 0px 0px 20px;
 }
 nav div {
     padding: 0 5px;
